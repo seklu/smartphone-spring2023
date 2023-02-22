@@ -75,3 +75,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 }
 
+/*logic of the last two chunks:
+when the user taps on a cell in the first table view, the iOS framework detects this and triggers a callback to the view controller's didSelectRowAt method. This is because the view controller has registered itself as the delegate for the table view, which means that it is notified of certain events that occur in the table view.
+
+The didSelectRowAt method then updates the currentRestaurant property of the view controller to the selected restaurant. It then calls tblViewBottom.reloadData(), which tells the table view that displays the food items to reload its data. When you call reloadData(), the table view will ask its data source (in this case, the view controller) to provide new cells and data for each row. This is done by calling the tableView(_:cellForRowAt:) method on the view controller, which in turn updates the cells of the second table view to show the correct food items for the currently selected restaurant.
+
+The Swift framework is simply the collection of tools and libraries that the developer uses to build an app for iOS. It includes things like the UIKit framework, which provides classes like UITableView and UIViewController that the developer can use to create a user interface for the app. When the user interacts with the app (such as by tapping on a cell in a table view), the framework detects this and triggers the appropriate callbacks to the developer's code (such as didSelectRowAt).
+*/
