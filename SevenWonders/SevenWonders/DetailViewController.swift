@@ -9,12 +9,11 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var descriptionText: UITextField!
+
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var alert = UIAlertController(title: "Title", message: "Message", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title:"OK", style: .default))
-        self.present(alert, animated: true)
         // Do any additional setup after loading the view.
     }
     

@@ -39,7 +39,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detailViewController.descriptionText.text = getDescription(for: indexPath.row)
+        detailViewController.loadView()
+        detailViewController.textView.text = getDescription(for: indexPath.row)
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 
