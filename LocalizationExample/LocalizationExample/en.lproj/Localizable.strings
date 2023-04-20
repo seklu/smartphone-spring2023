@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  LocalizationExample
+
+  Created by 王文琪 on 3/25/23.
+  
+*/
+
+//key value pair
+"hello_world" = "Hello world";
