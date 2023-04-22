@@ -17,13 +17,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tblView: UITableView!
     
-    var uploadImageVC : UIViewController?
+//    var uploadImageVC : UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        when at home, need to subscribe to the protocol of another
-        let controller = navigationController?.tabBarController
-        uploadImageVC = navigationController?.tabBarController?.viewControllers?[0]
+//        let controller = navigationController?.tabBarController
+//        uploadImageVC = navigationController?.tabBarController?.viewControllers?[0]
 //        print(uploadImageVC?.title)
 
         // Do any additional setup after loading the view.

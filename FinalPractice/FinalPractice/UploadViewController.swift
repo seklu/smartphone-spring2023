@@ -28,6 +28,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+    
         //test
         locationManager.startUpdatingLocation()
         
