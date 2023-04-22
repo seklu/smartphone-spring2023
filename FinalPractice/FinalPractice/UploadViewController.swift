@@ -102,7 +102,9 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     
         uploadProtocol?.uploadImageDelegate(img: imgPic, locationImg: location, titleImg: title)
         
-        print("i am in the upload controller, title is \(title)")
+        self.tabBarController?.selectedIndex = 0
+        
+//        print("i am in the upload controller, title is \(title)")
     }
     
 }

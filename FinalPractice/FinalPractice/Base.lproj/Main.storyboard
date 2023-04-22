@@ -47,7 +47,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUb-Jb-TMe">
                                 <rect key="frame" x="20" y="341" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -65,6 +65,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8T-rQ-bP0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="592.75362318840587" y="499.55357142857139"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="AbB-YU-FFU">
+            <objects>
+                <viewController id="mQ0-N6-gDh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V5b-FF-pDb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your profile" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nma-Vm-ZLB">
+                                <rect key="frame" x="156" y="431" width="102" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ian-Vi-m2H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nma-Vm-ZLB" firstAttribute="centerY" secondItem="V5b-FF-pDb" secondAttribute="centerY" id="Hqr-DI-Voq"/>
+                            <constraint firstItem="nma-Vm-ZLB" firstAttribute="centerX" secondItem="V5b-FF-pDb" secondAttribute="centerX" id="fqP-fM-x6K"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="book" catalog="system" id="v3U-6w-CYp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUT-Bb-B73" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-172.46376811594203" y="-771.42857142857144"/>
         </scene>
         <!--Home-->
         <scene sceneID="dlT-oL-9B8">
@@ -123,6 +150,7 @@
                     <connections>
                         <segue destination="zw1-1V-DjO" kind="relationship" relationship="viewControllers" id="EMg-rZ-0hb"/>
                         <segue destination="0AA-Il-ZIu" kind="relationship" relationship="viewControllers" id="2Fk-1c-Fd7"/>
+                        <segue destination="mQ0-N6-gDh" kind="relationship" relationship="viewControllers" id="qcp-CJ-HMO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0B2-gn-XvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -131,6 +159,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
