@@ -18,7 +18,19 @@
 		94DDA44E29EF8AB300AA197E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDA44D29EF8AB300AA197E /* TabBarViewController.swift */; };
 		94DDA45129F0AB7F00AA197E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDA44F29F0AB7F00AA197E /* TableViewCell.swift */; };
 		94DDA45229F0AB7F00AA197E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94DDA45029F0AB7F00AA197E /* TableViewCell.xib */; };
+		94DDA48A29F356D700AA197E /* TestInstaWithoutDBAndCloudUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDA48929F356D700AA197E /* TestInstaWithoutDBAndCloudUITests.swift */; };
+		94DDA48C29F356D700AA197E /* TestInstaWithoutDBAndCloudUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDA48B29F356D700AA197E /* TestInstaWithoutDBAndCloudUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94DDA48D29F356D700AA197E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94DDA42829EF629E00AA197E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94DDA42F29EF629E00AA197E;
+			remoteInfo = InstaWithoutDBAndCloud;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		94DDA43029EF629E00AA197E /* InstaWithoutDBAndCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaWithoutDBAndCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,10 +46,20 @@
 		94DDA44D29EF8AB300AA197E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		94DDA44F29F0AB7F00AA197E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		94DDA45029F0AB7F00AA197E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		94DDA48729F356D700AA197E /* TestInstaWithoutDBAndCloudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestInstaWithoutDBAndCloudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DDA48929F356D700AA197E /* TestInstaWithoutDBAndCloudUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInstaWithoutDBAndCloudUITests.swift; sourceTree = "<group>"; };
+		94DDA48B29F356D700AA197E /* TestInstaWithoutDBAndCloudUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInstaWithoutDBAndCloudUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		94DDA42D29EF629E00AA197E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DDA48429F356D700AA197E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				94DDA43229EF629E00AA197E /* InstaWithoutDBAndCloud */,
+				94DDA48829F356D700AA197E /* TestInstaWithoutDBAndCloudUITests */,
 				94DDA43129EF629E00AA197E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				94DDA43029EF629E00AA197E /* InstaWithoutDBAndCloud.app */,
+				94DDA48729F356D700AA197E /* TestInstaWithoutDBAndCloudUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +106,15 @@
 			path = InstaWithoutDBAndCloud;
 			sourceTree = "<group>";
 		};
+		94DDA48829F356D700AA197E /* TestInstaWithoutDBAndCloudUITests */ = {
+			isa = PBXGroup;
+			children = (
+				94DDA48929F356D700AA197E /* TestInstaWithoutDBAndCloudUITests.swift */,
+				94DDA48B29F356D700AA197E /* TestInstaWithoutDBAndCloudUITestsLaunchTests.swift */,
+			);
+			path = TestInstaWithoutDBAndCloudUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +135,24 @@
 			productReference = 94DDA43029EF629E00AA197E /* InstaWithoutDBAndCloud.app */;
 			productType = "com.apple.product-type.application";
 		};
+		94DDA48629F356D700AA197E /* TestInstaWithoutDBAndCloudUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94DDA48F29F356D700AA197E /* Build configuration list for PBXNativeTarget "TestInstaWithoutDBAndCloudUITests" */;
+			buildPhases = (
+				94DDA48329F356D700AA197E /* Sources */,
+				94DDA48429F356D700AA197E /* Frameworks */,
+				94DDA48529F356D700AA197E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94DDA48E29F356D700AA197E /* PBXTargetDependency */,
+			);
+			name = TestInstaWithoutDBAndCloudUITests;
+			productName = TestInstaWithoutDBAndCloudUITests;
+			productReference = 94DDA48729F356D700AA197E /* TestInstaWithoutDBAndCloudUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -114,6 +165,10 @@
 				TargetAttributes = {
 					94DDA42F29EF629E00AA197E = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					94DDA48629F356D700AA197E = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 94DDA42F29EF629E00AA197E;
 					};
 				};
 			};
@@ -131,6 +186,7 @@
 			projectRoot = "";
 			targets = (
 				94DDA42F29EF629E00AA197E /* InstaWithoutDBAndCloud */,
+				94DDA48629F356D700AA197E /* TestInstaWithoutDBAndCloudUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -144,6 +200,13 @@
 				94DDA45229F0AB7F00AA197E /* TableViewCell.xib in Resources */,
 				94DDA43D29EF62A100AA197E /* Assets.xcassets in Resources */,
 				94DDA43B29EF629E00AA197E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DDA48529F356D700AA197E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +227,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94DDA48329F356D700AA197E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DDA48A29F356D700AA197E /* TestInstaWithoutDBAndCloudUITests.swift in Sources */,
+				94DDA48C29F356D700AA197E /* TestInstaWithoutDBAndCloudUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94DDA48E29F356D700AA197E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94DDA42F29EF629E00AA197E /* InstaWithoutDBAndCloud */;
+			targetProxy = 94DDA48D29F356D700AA197E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		94DDA43929EF629E00AA197E /* Main.storyboard */ = {
@@ -358,6 +438,40 @@
 			};
 			name = Release;
 		};
+		94DDA49029F356D700AA197E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MK4Y7JZVW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.northeastern.wenqi.TestInstaWithoutDBAndCloudUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InstaWithoutDBAndCloud;
+			};
+			name = Debug;
+		};
+		94DDA49129F356D700AA197E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6MK4Y7JZVW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.northeastern.wenqi.TestInstaWithoutDBAndCloudUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InstaWithoutDBAndCloud;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -375,6 +489,15 @@
 			buildConfigurations = (
 				94DDA44529EF62A100AA197E /* Debug */,
 				94DDA44629EF62A100AA197E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94DDA48F29F356D700AA197E /* Build configuration list for PBXNativeTarget "TestInstaWithoutDBAndCloudUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DDA49029F356D700AA197E /* Debug */,
+				94DDA49129F356D700AA197E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

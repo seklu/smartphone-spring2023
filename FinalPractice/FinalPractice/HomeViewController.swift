@@ -1,12 +1,11 @@
 //
 //  HomeViewController.swift
-//  InstaWithoutDBAndCloud
+//  FinalPractice
 //
-//  Created by 王文琪 on 4/18/23.
+//  Created by 王文琪 on 4/21/23.
 //
 
 import UIKit
-
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ProtocolUploadImage {
 
@@ -15,6 +14,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var locations = [String]()
     var imageTitles : [String] = [String]()
 
+    
     @IBOutlet weak var tblView: UITableView!
     
     var uploadImageVC : UIViewController?
@@ -22,7 +22,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 //        when at home, need to subscribe to the protocol of another
-        let controller = navigationController?.tabBarController
+//        let controller = navigationController?.tabBarController
         uploadImageVC = navigationController?.tabBarController?.viewControllers?[0]
 //        print(uploadImageVC?.title)
 
@@ -48,7 +48,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        cell.imgContainer.image = UIImage(named: "images\(indexPath.row)")
         cell.imgContainer.image = images[indexPath.row]
         cell.lblTitle.text = imageTitles[indexPath.row]
-        print("cell \(cell.lblTitle.text)")
+        
         cell.lblLocation.text = locations[indexPath.row]
         return cell
     }
@@ -65,5 +65,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
+
 
 }

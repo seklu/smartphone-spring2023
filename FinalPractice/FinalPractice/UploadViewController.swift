@@ -1,15 +1,16 @@
 //
-//  UploadImageViewController.swift
-//  InstaWithoutDBAndCloud
+//  UploadViewController.swift
+//  FinalPractice
 //
-//  Created by 王文琪 on 4/18/23.
+//  Created by 王文琪 on 4/21/23.
 //
 
 import UIKit
 import CoreLocation
 
-class UploadImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
+    
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var imgView: UIImageView!
@@ -21,6 +22,9 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
+        
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -29,14 +33,13 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-    //test
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
           if status == .authorizedWhenInUse {
               locationManager.startUpdatingLocation()
           }
       }
-    
-    @IBAction func takeAPictureAction(_ sender: Any) {
+   
+    @IBAction func takeAPicAction(_ sender: Any) {
         let actionSheet = UIAlertController(title: "Take a pic", message: "something", preferredStyle: .alert)
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
             if UIImagePickerController.isSourceTypeAvailable(.camera){
@@ -68,7 +71,6 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
 //        locationManager.requestLocation()
     }
     
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
@@ -91,6 +93,7 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     
+    
     @IBAction func uploadAction(_ sender: Any) {
         guard let imgPic = imgView.image else {return}
         guard let location = lblLocation.text else {return}
@@ -100,6 +103,5 @@ class UploadImageViewController: UIViewController, UIImagePickerControllerDelega
         
         print("i am in the upload controller, title is \(title)")
     }
-    
     
 }
