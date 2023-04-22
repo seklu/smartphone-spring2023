@@ -9,7 +9,6 @@ import UIKit
 import CoreLocation
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
-
     
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var txtTitle: UITextField!
@@ -19,18 +18,18 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     let locationManager = CLLocationManager()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     
         //test
-        locationManager.startUpdatingLocation()
+//        locationManager.startUpdatingLocation()
         
     }
     
@@ -49,6 +48,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                 imagePicker.sourceType = UIImagePickerController.SourceType.camera;
                 imagePicker.allowsEditing = false
                 self.present(imagePicker, animated: true)
+                //get location when take a picture
+                self.locationManager.requestLocation()
         }}
         let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
@@ -57,6 +58,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                 imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary;
                 imagePicker.allowsEditing = false
                 self.present(imagePicker, animated: true)
+                self.locationManager.requestLocation()
             }
             
         }
@@ -68,8 +70,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         self.present(actionSheet,animated: true)
         
-        //get location when take a picture
-//        locationManager.requestLocation()
+
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -81,18 +82,70 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         picker.dismiss(animated: true)
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
 
+//
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        guard let loc = locations.last else {return}
+//
+//
+//        let lat = loc.coordinate.latitude
+//        let lng = loc.coordinate.longitude
+//        lblLocation.text = "longitude: \(lng) latitude: \(lat)"
+//
+//    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let loc = locations.last else {return}
-
-        let lat = loc.coordinate.latitude
-        let lng = loc.coordinate.longitude
-        lblLocation.text = "longitude: \(lng) latitude: \(lat)"
+        guard let location = locations.last else { return }
+        
+//        let lat = location.coordinate.latitude
+//        let lng = location.coordinate.longitude
+//
+        
+        getAddressFromLocation(location: location)
+        
+        
     }
     
+    func getAddressFromLocation( location: CLLocation){
+           
+        let clGeoCoder = CLGeocoder()
+           
+        clGeoCoder.reverseGeocodeLocation(location) { placeMarks, error in
+               
+               if error != nil {
+                   print(error?.localizedDescription)
+                   return
+               }
+               var address = ""
+               guard let place = placeMarks?.first else { return }
+               
+               if place.name != nil {
+                   address += place.name! +  ", "
+               }
+               
+               if place.locality != nil {
+                   address += place.locality! +  ", "
+               }
+               if place.subLocality != nil {
+                   address += place.subLocality!
+               }
+//               
+//               if place.postalCode != nil {
+//                   address += place.postalCode! +  ", "
+//               }
+//               
+//               if place.country != nil {
+//                   address += place.country!
+//               }
+               
+            self.lblLocation.text = address
+               
+           }
+       }
     
     
     @IBAction func uploadAction(_ sender: Any) {
